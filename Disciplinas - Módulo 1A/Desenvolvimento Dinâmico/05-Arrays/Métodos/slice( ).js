@@ -1,4 +1,4 @@
-//slice(de, até) Retorna um pedaço de uma cópia da array
+//slice() Retorna um pedaço de uma cópia da array
 var myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 console.log(".slice(): "+ myArray.slice(2))
 console.log(".slice(): "+ myArray.slice(2,6))

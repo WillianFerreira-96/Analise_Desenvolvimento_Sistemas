@@ -1,4 +1,4 @@
-//forEach(function)
+//forEach(function) funciona como um for
 var foods = ["Bread", "Pizza", "Meat", "Rice"]
 foods.forEach(x => console.log(x))
 foods.forEach(y => console.log("Food - "+ y))

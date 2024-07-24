@@ -47,10 +47,16 @@ console.log(".reverse(): "+ myArray.reverse())
 //length Retorna a quantidade de elementos da array
 console.log(".length: "+ myArray3.length)
 
+//concat() Junta duas arrays
+var arrayconcat1 = [1, 2, 3]
+var arrayconcat2 = [4, 5, 6]
+var sequencia = arrayconcat1.concat(arrayconcat2)
+console.log(".concat(): "+ sequencia)
+
 //indexOf() Localiza a posição do valor informado
 console.log(".indexOf(): "+ myArray2.indexOf('will'))
 
-//slice() Retorna um pedaço de uma cópia da array
+//slice(de, até) Retorna um pedaço de uma cópia da array
 var myArray5 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 console.log(".slice(): "+ myArray5.slice(2))
 console.log(".slice(): "+ myArray5.slice(2,6))
@@ -68,4 +74,5 @@ console.log(".splice(): Array Alterada "+ myArray6)
     var nomes = ["Will", "Mavi", "Trevor"]
     console.log(".splice(): Nomes Removidos: " + nomes.splice(1, 2, "Pipoca","Paçoca"))
     console.log(".splice(): Array Alterada: " + nomes)
-    
+
+

@@ -5,6 +5,7 @@ console.log(".splice(): Array Alterada "+ myArray+"\n")
 
 var myArray2 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"]
 console.log(".splice(): Elementos Removidos "+ myArray2.splice(2,3))
+//'(2,3)' o 3 nesse caso represemta a quantidade de elementos a ser removidos
 console.log(".splice(): Array Alterada "+ myArray2+"\n")
     //Substituição com splice()
     var nomes = ["Will", "Mavi", "Trevor"]

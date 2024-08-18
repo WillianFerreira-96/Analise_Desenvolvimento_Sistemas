@@ -14,5 +14,5 @@ var funcionarios = [
     {nome: "Kaique", idade: 21},
 ]
 
-var nomes = funcionarios.map(y=> y.nome)
+var nomes = funcionarios.map((y)=> y.nome)
 console.log(nomes)

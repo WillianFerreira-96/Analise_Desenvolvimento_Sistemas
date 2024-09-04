@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>PetAdote</title>
+</head>
+<body>
+    <header class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-danger px-5">
+            <div class="container-fluid">
+              <a class="navbar-brand text-light" href="#">PetAdote</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item px-3">
+                    <a class="nav-link text-light " aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item px-3">
+                    <a class="nav-link text-light" href="#">Pets</a>
+                  </li>
+                  <li class="nav-item px-3">
+                    <a class="nav-link text-light" href="#">Seu Pet</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <section class="container-fluid bg-danger-subtle pb-5">
+            <h1 class="text-center  pt-5 fs-1 text-danger-emphasis">Encontre o seu novo melhor amigo</h1>
+            <p class="text-center fs-4 pb-5">Adote, ame e faça a diferença!</p>
+            <div class="container-fluid row d-flex justify-content-around">
+                <div class="card mb-3" style="width: 18rem;">
+                    <img src="https://blog-static.petlove.com.br/wp-content/uploads/2023/09/25143323/como-cuidar-de-um-vira-lata-caramelo-petlove.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                      <p class="card-text">Hmm, será que essa é a minha chance de ter um lar? Estou curioso, humano... será que você é quem vai me adotar e transformar a minha vida?</p>
+                    </div>
+                  </div>
+                <div class="card mb-3" style="width: 18rem;">
+                    <img src="https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2023/11/16/670022017-gato-cacando.jpg" class="card-img-top" alt="gato preto">
+                    <div class="card-body">
+                      <p class="card-text">Miau! Estou só de brincadeira, mas quem sabe você não me pega de verdade e me leva pra casa? Prometo encher sua vida de ronronadas e travessuras!</p>
+                    </div>
+                  </div>
+                <div class="card mb-3" style="width: 18rem;">
+                    <img src="https://images.jota.info/wp-content/uploads/2023/04/pexels-rk-jajoria-1189673.jpg" class="card-img-top" alt="vira lata caramelo">
+                    <div class="card-body">
+                      <p class="card-text">Oi, humano! Sou um caramelo que só quer um lar cheio de amor. Me adota? Prometo encher sua vida de lambidas, alegria e companheirismo!</p>
+                    </div>
+                  </div>
+                <div class="card mb-3" style="width: 18rem;">
+                    <img src="https://blog-static.petlove.com.br/wp-content/uploads/2019/06/shutterstock_632318627.jpg" class="card-img-top" alt="gato caramelo">
+                    <div class="card-body">
+                      <p class="card-text">Olha só, humano! Estou aqui, todo fofinho, rolando de um lado para o outro... Não quer me adotar e levar essa fofura toda para casa?</p>
+                    </div>
+                  </div>
+                <div class="card mb-3" style="width: 18rem;">
+                    <img src="https://classic.exame.com/wp-content/uploads/2023/08/cachorro1.jpg?quality=70&strip=info&w=1024" class="card-img-top" alt="cão preto">
+                    <div class="card-body">
+                      <p class="card-text">Estou correndo na sua direção porque sei que, ao te encontrar, vou encontrar um lar cheio de amor e aventuras!</p>
+                    </div>
+                  </div>
+                  <h2 class="text-center text-danger">Um desses pode ser seu pet para a vida inteira!</h2>
+            </div>            
+        </section>
+        <section class="container mb-5">
+            <h2 class="text-center  pt-5 fs-2 text-danger-emphasis">Amigos disponíveis</h2>
+            <table class="table table-secondary table-striped-columns">
+                <tr class="table-primary">
+                    <th>Pet</th>
+                    <th>Quant. p/ adoção</th>
+                    <th>Tempo de espera</th>
+                </tr>
+                <tr>
+                    <td>Gato</td>
+                    <td>27</td>
+                    <td>3 dias</td>
+                </tr>
+                <tr>
+                    <td>Cão</td>
+                    <td>33</td>
+                    <td>5 dias</td>
+                </tr>
+            </table>
+        </section>
+        <section class="container-fluid bg-danger-subtle p-5">
+            <h2 class="text-center fs-2 text-danger-emphasis">Vamos Adotar?</h2>
+            <div class="container">
+                <form>
+                    <fieldset>
+                        <legend>Dados do adotante</legend>
+                        <input class="form-control" type="text" name="nome" placeholder="Nome:"><br>
+                        <input class="form-control mg-3" type="email" name="email" placeholder="E-Mail:">                    
+                    </fieldset>  
+                    <fieldset class="pt-5 pb-4">
+                        <legend>Qual animal deseja adotar?</legend>
+                            <input type="radio" name="pet" value="Cão">Cão<br>                    
+                            <input type="radio" name="pet" value="Gato">Gato 
+                    </fieldset>
+                    <fieldset>
+                        <legend>Por que você gostaria de adotar?</legend>
+                        <textarea class="form-control" name="comentario"></textarea>
+                    </fieldset><br>
+                    <input class="btn bg-danger text-light hover" type="submit" value="Enviar">
+                </form>
+            </div>               
+        </section>
+        <footer class="container-fluid">
+            <p class="text-center pt-3">&copy; Willian Ferreira 2024</p>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

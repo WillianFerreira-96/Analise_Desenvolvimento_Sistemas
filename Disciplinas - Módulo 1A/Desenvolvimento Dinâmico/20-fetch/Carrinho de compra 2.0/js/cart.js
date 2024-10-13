@@ -66,6 +66,7 @@ function atualizarCarrinho(){
                 <b><span id='total${index}'>0</span></b>            
             </div>
             <div class='close' onclick='removeProduto(${index})'>
+                &times;
             </div>
         </div>`
     })

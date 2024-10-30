@@ -1,0 +1,9 @@
+cria uma tabela e suas colunas:
+
+create table nome_da_tabela(
+	id_exemplo number(5) primary key,
+	nome_exemplo varchar2(20) not null,
+	data_exemplo date default sysdate,
+	cod_exemplo number(2)
+);
+

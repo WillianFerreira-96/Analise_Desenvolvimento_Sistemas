@@ -19,6 +19,6 @@ public class SpringDocConfig {
 						.license(new License().name("Apache 2.0").url("http://springdoc.org")))
 				.externalDocs(new ExternalDocumentation()
 				.description("Link do Repositório da Aplicação")
-				.url("http://localhost:8080"));
+				.url("https://github.com/WillianFerreira-96/Faculdade-ADS/tree/main/Disciplinas%20-%20M%C3%B3dulo%202B/Pr%C3%A1tica%20Integradora%20Tecnologias%20Disruptivas/API_RestFull"));
 	}
 }

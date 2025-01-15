@@ -1,0 +1,12 @@
+Método Cascata
+--------------
+--------------
+
+1º Requerimentos:
+---Documento de requerimentos do produto.
+	2º Design:
+	---Arquitetura de software.
+		3º Implementação:
+		---Software.
+			4º Verificação.
+				5º Manutenção.

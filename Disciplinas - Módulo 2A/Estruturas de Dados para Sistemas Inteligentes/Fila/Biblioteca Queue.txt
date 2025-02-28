@@ -1,0 +1,9 @@
+java.util.Queue;
+
+(NoSuchElementException)
+
+add(obj) //Enfileirar ---> Adiciona um elemento ao final
+
+remove() //Desenfileirar ---> Retira o primeiro elemento da fila
+
+peek() //Primeiro da fila ---> Retorna uma cópia do primero elemento da fila

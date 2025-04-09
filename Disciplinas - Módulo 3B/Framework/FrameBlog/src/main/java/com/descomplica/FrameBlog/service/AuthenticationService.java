@@ -8,4 +8,6 @@ public interface AuthenticationService {
     UserDetails loadUserByUserName(String login) throws UsernameNotFoundException;
 
     String getToken(AuthRequest auth);
+
+    String validateJwtToken(String token);
 }

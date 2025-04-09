@@ -17,8 +17,8 @@ import java.net.http.HttpResponse;
 
 @Component
 public class SecurityFilter extends OncePerRequestFilter {
-     @Autowired
 
+    @Autowired
     private AuthenticationService authenticationService;
 
      @Autowired

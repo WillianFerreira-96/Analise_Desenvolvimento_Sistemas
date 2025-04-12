@@ -3,6 +3,7 @@ package com.descomplica.FrameBlog.service.impl;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
+import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.descomplica.FrameBlog.models.User;
 import com.descomplica.FrameBlog.repositories.UserRepository;
 import com.descomplica.FrameBlog.request.AuthRequest;
@@ -17,12 +18,12 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
 @Service
-public class AuthenticationServiceImp implements AuthenticationService {
+public class AuthenticationServiceImpl implements AuthenticationService {
     @Autowired
     private UserRepository userRepository;
 
     @Override
-    public UserDetails loadUserByUserName(String login) throws UsernameNotFoundException{
+    public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException{
         return userRepository.findByUsername(login);
     }
 
@@ -32,37 +33,37 @@ public class AuthenticationServiceImp implements AuthenticationService {
         return generateToken(user);
     }
 
-    private String generateToken(User user){
-        try{
+    public  String generateToken(User user) {
+        try {
             Algorithm algorithm = Algorithm.HMAC256("my-secret");
 
             return JWT.create()
                     .withIssuer("FrameBlog")
-                    .withSubject(user.getUserName())
+                    .withSubject(user.getUsername())
                     .withExpiresAt(getExpirationDate())
                     .sign(algorithm);
-        }catch (JWTCreationException exception){
-            throw new RuntimeException("Fail to  generate token " + exception.getMessage());
+        } catch (JWTCreationException exception) {
+            throw new RuntimeException("Fail to generate token" +exception.getMessage());
         }
     }
 
-    public String validarJwtToken(String token){
-        try{
+    public String validateJwtToken(String token) {
+        try {
             Algorithm algorithm = Algorithm.HMAC256("my-secret");
 
-            return  JWT.require(algorithm)
+            return JWT.require(algorithm)
                     .withIssuer("FrameBlog")
                     .build()
                     .verify(token)
                     .getSubject();
-        }catch (JWTCreationException exception){
+
+        } catch (JWTVerificationException exception) {
             return "";
         }
     }
-
-    private Instant getExpirationDate(){
+    private Instant getExpirationDate() {
         return LocalDateTime.now()
                 .plusHours(8)
-                .toInstant(ZoneOffset.of("-3:00"));
+                .toInstant(ZoneOffset.of("-03:00"));
     }
 }

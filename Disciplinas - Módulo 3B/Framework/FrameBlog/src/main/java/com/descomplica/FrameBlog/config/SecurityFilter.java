@@ -33,7 +33,7 @@ public class SecurityFilter extends OncePerRequestFilter {
 
         if (token != null) {
             String username = authenticationService.validateJwtToken(token);
-            User user = userRepository.findByUsername(username);
+            User user = userRepository.findByUserName(username);
 
             var authenticationToken = new UsernamePasswordAuthenticationToken(user,
                     null, user.getAuthorities());

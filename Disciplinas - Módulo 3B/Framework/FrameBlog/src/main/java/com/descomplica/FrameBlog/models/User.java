@@ -1,7 +1,6 @@
 package com.descomplica.FrameBlog.models;
 
 import com.descomplica.FrameBlog.enums.RoleEnum;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,20 +17,22 @@ public class User implements UserDetails {
     private Long userId;
     private String name;
     private String email;
-    private String username;
+    private String userName;
     private String password;
     private RoleEnum role;
 
-    public User() {
+    public User(Long userId, String name, String email, String password, RoleEnum role, String username) {
     }
-    public User(final Long userId, final String name, final String email, final String username, final String password, final RoleEnum role) {
+    public User(final Long userId, final String name, final String email, final String userName, final String password, final RoleEnum role) {
         this.userId = userId;
         this.name = name;
         this.email = email;
-        this.username = username;
+        this.userName = userName;
         this.password = password;
         this.role = role;
     }
+
+
 
     public Long getUserId() {
         return userId;
@@ -57,8 +58,8 @@ public class User implements UserDetails {
         this.email = email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public void setPassword(String password) {
@@ -93,7 +94,7 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return this.username;
+        return this.userName;
     }
 
     @Override

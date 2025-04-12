@@ -9,6 +9,7 @@ import com.descomplica.FrameBlog.repositories.UserRepository;
 import com.descomplica.FrameBlog.request.AuthRequest;
 import com.descomplica.FrameBlog.service.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,8 @@ import org.springframework.stereotype.Service;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
+import java.util.Collection;
+import java.util.List;
 
 @Service
 public class AuthenticationServiceImpl implements AuthenticationService {
@@ -24,12 +27,12 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException{
-        return userRepository.findByUsername(login);
+        return userRepository.findByUserName(login);
     }
 
     @Override
     public String getToken(AuthRequest auth){
-        User user = userRepository.findByUsername(auth.getUsername());
+        User user = userRepository.findByUserName(auth.getUserName());
         return generateToken(user);
     }
 
@@ -43,7 +46,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                     .withExpiresAt(getExpirationDate())
                     .sign(algorithm);
         } catch (JWTCreationException exception) {
-            throw new RuntimeException("Fail to generate token" +exception.getMessage());
+            throw new RuntimeException("Fail to generate token" + exception.getMessage());
         }
     }
 
@@ -65,5 +68,20 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         return LocalDateTime.now()
                 .plusHours(8)
                 .toInstant(ZoneOffset.of("-03:00"));
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of();
+    }
+
+    @Override
+    public String getPassword() {
+        return "";
+    }
+
+    @Override
+    public String getUsername() {
+        return "";
     }
 }

@@ -1,16 +1,16 @@
 package com.descomplica.FrameBlog.request;
 
 public class AuthRequest {
-    final String username;
+    final String userName;
     final String password;
 
-    public AuthRequest(String username, String password) {
-        this.username = username;
+    public AuthRequest(String userName, String password) {
+        this.userName = userName;
         this.password = password;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
     public String getPassword() {

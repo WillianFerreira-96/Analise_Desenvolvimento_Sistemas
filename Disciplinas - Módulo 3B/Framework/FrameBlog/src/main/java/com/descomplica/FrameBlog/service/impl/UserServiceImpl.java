@@ -23,15 +23,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User save(final User user) {
-        User existingUser = userRepository.findByUserName(user.getName());
+        User existingUser = userRepository.findByUsername(user.getName());
         if (Objects.nonNull(existingUser)) {
-            throw new RuntimeException("Existing User");
+            throw new RuntimeException("Exixting User");
         }
 
         String passwordHash = passwordEncoder.encode(user. getPassword());
-        User entity = new User(user.getUserId(), user.getName(), user.getEmail(), user.getPassword(), user.getRole(), user.getUsername());
+        User entity = new User(user.getUserId(), user.getName(), user.getEmail(), user.getPassword(), user.getRole(), user.getUserName());
         User newUser = userRepository.save(entity);
-        return new User(newUser.getUserId(), newUser.getName(), newUser.getEmail(), newUser.getPassword(), newUser.getRole(), newUser.getUsername());
+        return new User(newUser.getUserId(), newUser.getName(), newUser.getEmail(), newUser.getPassword(), newUser.getRole(), newUser.getUserName());
     }
 
     @Override
@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
             userUpdated.setEmail(user.getEmail());
             userUpdated.setPassword(user.getPassword());
             userUpdated.setRole(user.getRole());
-            userUpdated.setUserName(user.getUsername());
+            userUpdated.setUserName(user.getUserName());
             return userRepository.save(userUpdated);
         }
         return null;

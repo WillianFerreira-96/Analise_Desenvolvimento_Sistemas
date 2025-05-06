@@ -1,14 +1,14 @@
 package com.descomplica.FrameBlog.service;
 
-import com.descomplica.FrameBlog.models.User;
+import com.descomplica.FrameBlog.models.UserV2;
 
 import java.util.List;
 
 public interface UserService {
-    User save(User user);
-    List<User> getAll();
-    User get(long id);
-    User update(long id, User user);
+    UserV2 save(UserV2 userV2);
+    List<UserV2> getAll();
+    UserV2 get(long id);
+    UserV2 update(long id, UserV2 userV2);
     void delete(long id);
 
 }

@@ -16,25 +16,25 @@ public class Post {
     private Date date;
 
     @ManyToOne
-    private User userId;
+    private UserV2 userV2Id;
 
     public Post() {
     }
 
-    public Post(final long postId, final String title, final String content, final Date date, final User userId) {
+    public Post(final long postId, final String title, final String content, final Date date, final UserV2 userV2Id) {
         this.postId = postId;
         this.title = title;
         this.content = content;
         this.date = date;
-        this.userId = userId;
+        this.userV2Id = userV2Id;
     }
 
-    public User getUserId() {
-        return userId;
+    public UserV2 getUserId() {
+        return userV2Id;
     }
 
-    public void setUserId(User userId) {
-        this.userId = userId;
+    public void setUserId(UserV2 userV2Id) {
+        this.userV2Id = userV2Id;
     }
 
     public Date getDate() {

@@ -1,12 +1,9 @@
 package com.descomplica.FrameBlog.service.impl;
 
-import ch.qos.logback.classic.encoder.JsonEncoder;
-import com.descomplica.FrameBlog.models.User;
+import com.descomplica.FrameBlog.models.UserV2;
 import com.descomplica.FrameBlog.repositories.UserRepository;
 import com.descomplica.FrameBlog.service.UserService;
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -22,41 +19,41 @@ public class UserServiceImpl implements UserService {
     private PasswordEncoder passwordEncoder;
 
     @Override
-    public User save(final User user) {
-        User existingUser = userRepository.findByUsername(user.getName());
-        if (Objects.nonNull(existingUser)) {
-            throw new RuntimeException("Exixting User");
+    public UserV2 save(final UserV2 userV2) {
+        UserV2 existingUserV2 = userRepository.findByUsername(userV2.getUsername());
+        if (Objects.nonNull(existingUserV2)) {
+            throw new RuntimeException("Existing User");
         }
 
-        String passwordHash = passwordEncoder.encode(user. getPassword());
-        User entity = new User(user.getUserId(), user.getName(), user.getEmail(), user.getPassword(), user.getRole(), user.getUserName());
-        User newUser = userRepository.save(entity);
-        return new User(newUser.getUserId(), newUser.getName(), newUser.getEmail(), newUser.getPassword(), newUser.getRole(), newUser.getUserName());
+        String passwordHash = passwordEncoder.encode(userV2.getPassword());
+        UserV2 entity = new UserV2(userV2.getUserId(), userV2.getName(), userV2.getEmail(), userV2.getUsername(), userV2.getPassword(), userV2.getRole());
+        UserV2 newUserV2 = userRepository.save(entity);
+        return new UserV2(newUserV2.getUserId(), newUserV2.getName(), newUserV2.getEmail(), newUserV2.getUsername(), newUserV2.getPassword(), newUserV2.getRole());
     }
 
     @Override
-    public List<User> getAll(){
+    public List<UserV2> getAll(){
         return userRepository.findAll();
     }
 
     @Override
-    public User get(long id){
-        return userRepository.findById(id).orElseThrow(
-                ()-> new EntityNotFoundException("User not found")
+    public UserV2 get(long id){
+        return userRepository.findById(id).orElseThrow(null
+               // ()-> new EntityNotFoundException("User not found")
         );
     }
 
     @Override
-    public User update(final long id, final User user){
-        User userUpdated = userRepository.findById(id).orElse(null);
-        if(Objects.nonNull(userUpdated)) {
-            String passwordHash = passwordEncoder.encode(user. getPassword());
-            userUpdated.setName(user.getName());
-            userUpdated.setEmail(user.getEmail());
-            userUpdated.setPassword(user.getPassword());
-            userUpdated.setRole(user.getRole());
-            userUpdated.setUserName(user.getUserName());
-            return userRepository.save(userUpdated);
+    public UserV2 update(final long id, final UserV2 userV2){
+        UserV2 userV2Updated = userRepository.findById(id).orElse(null);
+        if(Objects.nonNull(userV2Updated)) {
+            String passwordHash = passwordEncoder.encode(userV2.getPassword());
+            userV2Updated.setName(userV2.getName());
+            userV2Updated.setEmail(userV2.getEmail());
+            userV2Updated.setPassword(userV2.getPassword());
+            userV2Updated.setRole(userV2.getRole());
+            userV2Updated.setUsername(userV2.getUsername());
+            return userRepository.save(userV2Updated);
         }
         return null;
     }

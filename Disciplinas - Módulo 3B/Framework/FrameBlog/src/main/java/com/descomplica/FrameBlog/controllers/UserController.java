@@ -1,13 +1,11 @@
-//O Controller é a entrada da API, Direcionando para o Service.
-//O Service valida e identica se as informações estão dentro das regras da API e envia esses dados para o Repository
-//O Repository...
 package com.descomplica.FrameBlog.controllers;
 
-import com.descomplica.FrameBlog.service.UserService;
-import com.descomplica.FrameBlog.service.v2.UserServiceV2;
+import com.descomplica.FrameBlog.models.User;
+import com.descomplica.FrameBlog.services.UserService;
+import com.descomplica.FrameBlog.services.v2.UserServiceV2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,15 +18,16 @@ public class UserController {
     @Autowired
     private UserServiceV2 userServiceV2;
 
-    @PostMapping(path = "/save")
-    private @ResponseBody User save(@RequestBody User user) {
-        return userService.save(user);
-    }
-
+    @Cacheable
     @GetMapping(path = "/getAll")
     private @ResponseBody List<User> getAll() {
         return userService.getAll();
 
+    }
+
+    @PostMapping(path = "/save")
+    private @ResponseBody User save(@RequestBody User user) {
+        return userService.save(user);
     }
 
     // Versionamento por parâmetro de URI

@@ -94,4 +94,3 @@ public class AddressV2 {
         return this.userV2;
     }
 }
-

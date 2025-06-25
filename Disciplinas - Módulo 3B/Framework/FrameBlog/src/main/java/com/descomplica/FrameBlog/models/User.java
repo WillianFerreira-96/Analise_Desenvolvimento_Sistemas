@@ -1,6 +1,8 @@
 package com.descomplica.FrameBlog.models;
 
+import com.descomplica.FrameBlog.deserializers.CustomAuthorityDeserializer;
 import com.descomplica.FrameBlog.enums.RoleEnum;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -11,9 +13,21 @@ import java.util.List;
 
 @Entity
 @Table(name = "User")
-public class UserV2 implements UserDetails {
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    /*    @GeneratedValue(strategy = GenerationType.IDENTITY) -- Esse parâmetro define a estratégia de geração do ID
+                AUTO     --->   (padrão) O JPA escolhe a estratégia com base no banco de dados.
+                IDENTITY --->	Usa o recurso de auto-incremento do banco (ex: MySQL).
+                SEQUENCE --->	Usa uma sequência do banco (ex: PostgreSQL, Oracle).
+                TABLE    --->	Cria uma tabela auxiliar para gerar IDs (mais raro).    */
+
+    /*O JpaRepository segue o padrão de camelCase para consultas no banco de dados
+    e caso algum elemento do seu banco de dados for padrão snake_case, use a
+    notação @Column para especificar a versão com snake_case e
+    crie os atributos da classe em camelCase*/
+    @Column(name = "nome_completo")
+    private String nomeCompleto;
     private Long userId;
     private String name;
     private String email;
@@ -21,10 +35,9 @@ public class UserV2 implements UserDetails {
     private String password;
     private RoleEnum role;
 
-    public UserV2() {
+    public User() {
     }
-
-    public UserV2(final Long userId, final String name, final String email, final String username, final String password, final RoleEnum role) {
+    public User(final Long userId, final String name, final String email, final String username, final String password, final RoleEnum role) {
         this.userId = userId;
         this.name = name;
         this.email = email;
@@ -74,6 +87,7 @@ public class UserV2 implements UserDetails {
     }
 
     @Override
+    @JsonDeserialize(using = CustomAuthorityDeserializer.class)
     public Collection<? extends GrantedAuthority> getAuthorities() {
         if (this.role == RoleEnum.ADMIN) {
             return List.of(

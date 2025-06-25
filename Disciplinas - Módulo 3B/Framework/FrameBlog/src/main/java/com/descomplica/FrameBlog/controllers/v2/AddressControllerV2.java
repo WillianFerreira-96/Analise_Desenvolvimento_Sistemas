@@ -1,7 +1,7 @@
 package com.descomplica.FrameBlog.controllers.v2;
 
 import com.descomplica.FrameBlog.models.v2.AddressV2;
-import com.descomplica.FrameBlog.service.v2.AddressServiceV2;
+import com.descomplica.FrameBlog.services.v2.AddressServiceV2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

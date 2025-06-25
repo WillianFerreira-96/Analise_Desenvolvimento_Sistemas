@@ -1,0 +1,5 @@
+Exemplo: usuário envia um formulário para cadastrar um produto
+Usuário → Controller → Service → Repository → Banco de Dados
+
+E na volta (por exemplo, para exibir uma lista de produtos):
+Banco de Dados → Repository → Service → Controller → View/JSON → Usuário

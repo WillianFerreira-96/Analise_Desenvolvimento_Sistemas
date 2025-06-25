@@ -1,8 +1,8 @@
-package com.descomplica.FrameBlog.service.impl.v2;
+package com.descomplica.FrameBlog.services.impl.v2;
 
 import com.descomplica.FrameBlog.models.v2.UserV2;
 import com.descomplica.FrameBlog.repositories.v2.UserRepositoryV2;
-import com.descomplica.FrameBlog.service.v2.UserServiceV2;
+import com.descomplica.FrameBlog.services.v2.UserServiceV2;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Service
-public abstract class UserServiceImplV2 implements UserServiceV2 {
+public class UserServiceV2Impl implements UserServiceV2 {
     @Autowired
     private UserRepositoryV2 userRepositoryV2;
 
@@ -20,7 +20,7 @@ public abstract class UserServiceImplV2 implements UserServiceV2 {
     private PasswordEncoder passwordEncoder;
 
     @Override
-    public UserV2 save(com.descomplica.FrameBlog.models.UserV2 user) {
+    public UserV2 save(final UserV2 user) {
         UserV2 existingUser = userRepositoryV2.findByUsername(user.getUsername());
 
         if (Objects.nonNull(existingUser)) {
@@ -42,12 +42,12 @@ public abstract class UserServiceImplV2 implements UserServiceV2 {
     }
 
     @Override
-    public UserV2 get(long id) {
+    public UserV2 get(final Long id) {
         return userRepositoryV2.findById(id).orElseThrow(() -> new EntityNotFoundException("User not found"));
     }
 
     @Override
-    public UserV2 update(long id, com.descomplica.FrameBlog.models.UserV2 user) {
+    public UserV2 update(final Long id, final UserV2 user) {
         UserV2 userUpdate = userRepositoryV2.findById(id).orElseThrow(() -> new EntityNotFoundException("User not found"));
         if (Objects.nonNull(userUpdate)) {
             String passwordHash = passwordEncoder.encode(user.getPassword());
@@ -62,8 +62,9 @@ public abstract class UserServiceImplV2 implements UserServiceV2 {
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(final Long id) {
         userRepositoryV2.findById(id).orElseThrow(() -> new EntityNotFoundException("User not found"));
         userRepositoryV2.deleteById(id);
     }
+
 }

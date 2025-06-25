@@ -1,1 +1,0 @@
-CREATE DATABASE frameBlog_db;

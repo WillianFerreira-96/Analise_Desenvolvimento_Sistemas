@@ -1,4 +1,4 @@
-package com.descomplica.FrameBlog.exception;
+package com.descomplica.FrameBlog.exceptions;
 
 import java.time.Instant;
 
@@ -6,11 +6,11 @@ public class Exception {
 
     private Instant timestamp;
     private Integer status;
-    private String erro;
+    private String error;
     private String message;
     private String path;
 
-    public Exception(){
+    public Exception () {
 
     }
 
@@ -30,12 +30,12 @@ public class Exception {
         this.status = status;
     }
 
-    public String getErro() {
-        return erro;
+    public String getError() {
+        return error;
     }
 
-    public void setErro(String erro) {
-        this.erro = erro;
+    public void setError(String error) {
+        this.error = error;
     }
 
     public String getMessage() {

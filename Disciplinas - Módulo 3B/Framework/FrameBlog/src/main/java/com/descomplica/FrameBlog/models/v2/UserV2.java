@@ -1,17 +1,18 @@
 package com.descomplica.FrameBlog.models.v2;
+
 import com.descomplica.FrameBlog.enums.RoleEnum;
-import com.descomplica.FrameBlog.service.v2.AddressServiceV2;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.management.relation.Role;
 import java.util.Collection;
 import java.util.List;
 
 @Entity
 @Table(name = "User")
-public class UserV2 extends com.descomplica.FrameBlog.models.UserV2 implements UserDetails {
+public class UserV2 implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

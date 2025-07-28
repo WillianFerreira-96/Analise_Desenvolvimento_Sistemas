@@ -1,0 +1,12 @@
+Para mudar o nome visível:
+
+	Android:
+		Abra este arquivo: android/app/src/main/AndroidManifest.xml
+		E altere a linha: android:label="meu_exemplo"
+    
+
+
+	iOS (se for usar):
+
+		Abra este arquivo: ios/Runner/Info.plist
+		E altere a linha: <key>CFBundleDisplayName</key> <br> <string>meu_exemplo</string>

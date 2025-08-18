@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
             passo5(),
             passo6(),
             passo7(),
+            passo8(),
           ],
         ),
       ),
@@ -371,67 +372,73 @@ Widget passo6() => Column(
     ),
 
     const VideoPlayerWidget(),
-
   ],
 );
 
-class VideoPlayerWidget extends StatefulWidget{
+class VideoPlayerWidget extends StatefulWidget {
   const VideoPlayerWidget({super.key});
 
   @override
   _VideoPlayerWidgetState createState() => _VideoPlayerWidgetState();
-   
 }
 
-class _VideoPlayerWidgetState extends State<VideoPlayerWidget>{
+class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   late VideoPlayerController _controller;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
 
-    _controller = VideoPlayerController.networkUrl(
-    Uri.parse('https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'),
-    )..initialize().then((_){
-      setState(() {});
-    });
+    _controller =
+        VideoPlayerController.networkUrl(
+            Uri.parse(
+              'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
+            ),
+          )
+          ..initialize().then((_) {
+            setState(() {});
+          });
   }
 
   @override
-  Widget build (BuildContext context){
+  Widget build(BuildContext context) {
     return Padding(
-      padding:EdgeInsets.all(20),
+      padding: EdgeInsets.all(20),
       child: Column(
-      children: <Widget>[
-        _controller.value.isInitialized ? AspectRatio(aspectRatio: _controller.value.aspectRatio, child: VideoPlayer(_controller))
-        : CircularProgressIndicator(),
+        children: <Widget>[
+          _controller.value.isInitialized
+              ? AspectRatio(
+                  aspectRatio: _controller.value.aspectRatio,
+                  child: VideoPlayer(_controller),
+                )
+              : CircularProgressIndicator(),
 
-        SizedBox(height: 20),
+          SizedBox(height: 20),
 
-        FloatingActionButton( 
-          onPressed: (){
-            setState(() {
-              _controller.value.isPlaying ? _controller.pause() : _controller.play();
-            });
-          },
+          FloatingActionButton(
+            onPressed: () {
+              setState(() {
+                _controller.value.isPlaying
+                    ? _controller.pause()
+                    : _controller.play();
+              });
+            },
 
-          child: Icon(
-            _controller.value.isPlaying ? Icons.pause : Icons.play_arrow
+            child: Icon(
+              _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+            ),
           ),
-        ),
-      ],
-    ),
+        ],
+      ),
     );
   }
 
   @override
-  void dispose(){
+  void dispose() {
     super.dispose();
 
     _controller.dispose();
   }
-
-
 }
 
 //-----------------------------------------------------------------------------
@@ -453,7 +460,7 @@ Widget passo7() => Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            "Passo 6:\nYouTube",
+            "Passo 7:\nYouTube",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontWeight: FontWeight.bold,
@@ -466,19 +473,17 @@ Widget passo7() => Column(
     ),
 
     const YouTubeVideoPlayer(),
-
   ],
 );
 
-class YouTubeVideoPlayer extends StatefulWidget{
+class YouTubeVideoPlayer extends StatefulWidget {
   const YouTubeVideoPlayer({super.key});
 
   @override
   State<YouTubeVideoPlayer> createState() => _YouTubeVideoPlayerState();
-   
 }
 
-class _YouTubeVideoPlayerState extends State<YouTubeVideoPlayer>{
+class _YouTubeVideoPlayerState extends State<YouTubeVideoPlayer> {
   late YoutubePlayerController _controller;
 
   @override
@@ -486,21 +491,39 @@ class _YouTubeVideoPlayerState extends State<YouTubeVideoPlayer>{
     super.initState();
     _controller = YoutubePlayerController(
       initialVideoId: 'dQw4w9WgXcQ', // Só o ID do vídeo
-      flags: const YoutubePlayerFlags(
-        autoPlay: false,
-        mute: false,
-      ),
+      flags: const YoutubePlayerFlags(autoPlay: false, mute: false),
     );
   }
 
   @override
-  Widget build (BuildContext context){
+  Widget build(BuildContext context) {
     return Padding(
-      padding:EdgeInsets.all(20),
+      padding: EdgeInsets.all(20),
       child: YoutubePlayer(
-          controller: _controller,
-          showVideoProgressIndicator: true,
-      )
+        controller: _controller,
+        showVideoProgressIndicator: true,
+      ),
     );
   }
 }
+
+//-----------------------------------------------------------------------------
+
+Widget passo8() => MaterialApp(
+  // O theme  precisa esta dentro do MaterialApp()
+  // O theme não esta funcionando
+  theme: ThemeData(
+    primarySwatch: Colors.blue,
+    textTheme: TextTheme(bodyLarge: TextStyle(color: Colors.deepPurple, fontSize: 20)),
+  ),
+
+  home: Padding(
+    padding: EdgeInsets.all(20),
+    child: Column(
+      children: [
+        Text("Texto com tema personalizado!"),
+        ElevatedButton(onPressed: (){}, child: Text("Test"))
+      ],
+    ),
+  ),
+);

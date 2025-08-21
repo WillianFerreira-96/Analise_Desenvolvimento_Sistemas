@@ -1,7 +1,7 @@
 Após baixar o flutter -  https://docs.flutter.dev/get-started/install/windows/mobile
 E configurar a variável de ambiente PATH...
-No Terminal dentro do diretório em questão:
 
+No Terminal dentro do diretório em questão:
 flutter create nome_do_app   //para criar um aplicativo com toda estrutura necessaria
 			     //o caminho da pasta não pode conter acentos ou simbolos
 

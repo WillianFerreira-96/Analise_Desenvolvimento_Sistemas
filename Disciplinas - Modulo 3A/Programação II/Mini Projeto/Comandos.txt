@@ -1,0 +1,2 @@
+npm install express // para instalar o Express a aplicação
+npm install mongoose // para instalar o banco de dados não relacional mongoose

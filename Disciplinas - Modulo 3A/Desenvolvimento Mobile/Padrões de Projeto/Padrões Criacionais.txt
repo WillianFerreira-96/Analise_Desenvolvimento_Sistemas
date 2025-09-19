@@ -1,4 +1,0 @@
-Para estudar:
-	- Singleton
-	- Factory Method
-	- Builder

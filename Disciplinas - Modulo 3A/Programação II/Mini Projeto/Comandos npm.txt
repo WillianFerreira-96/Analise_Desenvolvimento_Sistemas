@@ -1,3 +1,0 @@
-npm install express // Instala o Express a aplicação
-npm install mongoose // Instala o banco de dados não relacional mongoose
-npm install bcrypt // Instala o bcrypt para criptografia de senhas

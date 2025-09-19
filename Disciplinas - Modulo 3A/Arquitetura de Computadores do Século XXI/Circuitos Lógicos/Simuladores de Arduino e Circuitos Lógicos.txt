@@ -1,5 +1,0 @@
-Simulador de Circuiitos Lógicos
-	-https://academo.org/demos/logic-gate-simulator/
-
-Simulador de Arduino
-	-https://www.tinkercad.com/dashboard/designs/circuits

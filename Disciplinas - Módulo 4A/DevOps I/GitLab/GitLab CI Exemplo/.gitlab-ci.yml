@@ -1,0 +1,58 @@
+variables: # variáveis globais para usar em todos os jobs
+    APP_PATH: springbootapi          # pasta onde está o código da aplicação
+    DOCKER_TAG_NAME: $APP_PATH:latest # nome da imagem Docker (springbootapi:latest)
+
+stages:   # define as fases (ordem) da pipeline
+    - test      # 1ª fase: rodar os testes
+    - prebuild  # 2ª fase: limpar imagens/containers antigos
+    - build     # 3ª fase: construir a imagem Docker nova
+    - deploy    # 4ª fase: subir o container com a imagem nova
+
+Testes_Unitarios: # nome do job
+    stage: test   # em qual fase ele roda (test)
+    artifacts:
+        paths:
+            - $APP_PATH/target/surefire-reports/ # salva relatórios de teste
+    cache:
+        paths:
+            - $APP_PATH # guarda essa pasta para não precisar baixar tudo de novo
+    image: maven:3.8.5-openjdk-17-slim # imagem Docker com Maven + Java 17
+    script:
+        - cd $APP_PATH  # entra na pasta do projeto
+        - mvn test      # roda os testes unitários do Maven
+
+Limpar_Imagem:
+    stage: prebuild
+    dependencies: [] # não depende de nenhum job anterior
+    cache: []        # não usa cache
+    variables:
+        GIT_STRATEGY: none # não baixa o código-fonte de novo
+    script: 
+        - docker container stop $(docker container ls -a -f ancestor=$DOCKER_TAG_NAME -q) || FAILED=true
+        - echo Tentativa de parada de container. Falhou? - $FAILED
+        - FAILED=false
+        - docker container rm $(docker container ls -a -f ancestor=$DOCKER_TAG_NAME -q) || FAILED=true
+        - echo Tentativa de remoção de container. Falhou? - $FAILED 
+        - FAILED=false
+        - docker image rm $DOCKER_TAG_NAME || FAILED=true
+        - echo Tentativa de remoção da image. Falhou? - $FAILED
+
+Criar_Imagem:
+    stage: build
+    dependencies: [] # não depende de outros jobs
+    cache:
+        paths:
+            - $APP_PATH # aproveita arquivos já baixados do projeto
+    variables:
+        GIT_STRATEGY: none # não baixa o código de novo
+    script:
+        - docker build --no-cache -t $DOCKER_TAG_NAME ./$APP_PATH
+
+Criar_Container:
+    stage: deploy
+    dependencies: [] # independente dos outros
+    cache: []        # não usa cache
+    variables:
+        GIT_STRATEGY: none # não baixa o código
+    script:
+        - docker run --name MeuSpringBootAPI --network MinhaRede -p 8080:8080 -d $DOCKER_TAG_NAME

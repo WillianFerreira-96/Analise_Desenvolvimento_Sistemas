@@ -1,0 +1,23 @@
+Após baixar o flutter -  https://docs.flutter.dev/get-started/install/windows/mobile
+E configurar a variável de ambiente PATH...
+
+No Terminal dentro do diretório em questão:
+flutter create nome_do_app   //para criar um aplicativo com toda estrutura necessaria
+			     //o caminho da pasta não pode conter acentos ou simbolos
+
+flutter emulators   //para mostrar quais emuladores disponiveis
+//para que emuladores funcionem é preciso ter o android studio instalado e configurado
+	flutter emulators --launch Pixel_8_API_26   //selecione o emulador em questão para que o flutter reconheça
+
+flutter devices   //para conferir os elmuladores reconhecidos
+
+flutter run   //para rodar o app, e escolha o dispositivo desejado
+
+
+//Execute "flutter clean" e "flutter pub get" caso o app esteja voltando a versão anterior
+	flutter clean // para apagar todos os arquivos temporários de build do projeto
+	flutter pub get //para baixar as dependências do projeto especificadas no pubspec.yaml
+	
+	flutter pub upgrade --major-versions // atualiza todas as versões das dependências
+
+flutter build apk //constroi um arquivo apk e armazena no: build/app/outputs/flutter-apk/app-release.apk

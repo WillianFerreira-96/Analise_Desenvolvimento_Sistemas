@@ -1,0 +1,66 @@
+# =========================
+# Ignorar dependências Node
+# =========================
+**/node_modules/
+
+# =========================
+# Logs
+# =========================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# =========================
+# Arquivos de ambiente
+# =========================
+**/.env
+**/.env.local
+**/.env.*.local
+
+# =========================
+# Build do Next.js (frontend)
+# =========================
+**/.next/
+**/out/
+**/.next/cache
+
+# =========================
+# Compilados/temporários (backend Node/Express)
+# =========================
+**/dist/
+**/build/
+**/coverage/
+
+# =========================
+# Sistema operacional
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Flutter
+# =========================
+**/build/
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.packages
+**/pubspec.lock
+**/.idea/
+**/.vscode/
+*.iml
+
+# =========================
+# Docker
+# =========================
+*.pid
+*.seed
+*.pid.lock
+
+# Pastas de runtime
+/tmp
+/var
+/run
+

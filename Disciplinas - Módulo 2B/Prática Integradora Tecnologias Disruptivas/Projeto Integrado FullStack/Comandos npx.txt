@@ -1,0 +1,6 @@
+npx create-react-app primeiro-aplicativo
+npx npm install
+npm install @mui/material @emotion/react @emotion/styled @mui/icons-material
+npm install @mui/material/box @mui/material/drawer @mui/material/button
+npm install react-bootstrap bootstrap
+npm install axios

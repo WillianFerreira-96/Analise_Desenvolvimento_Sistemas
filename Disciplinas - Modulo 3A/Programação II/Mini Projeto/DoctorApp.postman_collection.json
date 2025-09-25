@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "4f762e84-b129-410c-a335-58742b8f1b08",
+		"name": "DoctorApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "47933796"
+	},
+	"item": [
+		{
+			"name": "Doctor",
+			"item": [
+				{
+					"name": "Create Doctor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Dr. Raul Seixas\",\r\n    \"login\":\"rauzito\",\r\n    \"password\": \"TheKey\",\r\n    \"medicalSpecialty\": \"Psiquiatra\",\r\n    \"medicalRegistration\": \"11272\",\r\n    \"email\": \"sociedade_alternativa@gmail.com\",\r\n    \"phone\" : \"11 97666-1227 \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/createDoctor"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Doctor",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Willian Ferreira\",\r\n    \"birthDate\":\"20-12-1996\",\r\n    \"email\": \"willian.ferreira.gomes96@gmail.com\",\r\n    \"phone\":\"11 97034-1617\"\r\n}"
+						},
+						"url": "localhost:3000/getDoctor/68ae02be9357526dc853a864"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Doctors",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JJZCI6IjY4YWUzMzVkN2IyMzhkODc2MzgxMzUxNSIsImlhdCI6MTc1ODMxMzM1MCwiZXhwIjoxNzU4MzE2OTUwfQ.hHrUmvT3I5MyiLd1vviSQW10wowkaWai-nCdWyiTt_4",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/getAllDoctors"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Doctor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"Trovador_Solitario\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/updateDoctor/68ae02be9357526dc853a864"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Doctor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/deleteDoctor/68ae14f6b597f5907426aa33"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointment",
+			"item": [
+				{
+					"name": "Create Appointment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2025-08-29T15:00:00.000+00:00\",\r\n    \"doctorId\":\"68ae02be9357526dc853a864\",\r\n    \"pacientId\": \"68ae0f9fb597f5907426aa2b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/postAppointment"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Appointments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2025-08-29T15:00:00.000+00:00\",\r\n    \"doctorId\":\"68ae02be9357526dc853a864\",\r\n    \"pacientId\": \"68ae0f9fb597f5907426aa2b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/getAppointments"
+					},
+					"response": []
+				},
+				{
+					"name": "Reschedule",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2025-08-29T15:00:00.000+00:00\",\r\n    \"doctorId\":\"68ae02be9357526dc853a864\",\r\n    \"pacientId\": \"68ae0f9fb597f5907426aa2b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/reschedule/68ae0fbfb597f5907426aa2d"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pacient",
+			"item": [
+				{
+					"name": "Create Pacient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Willian Ferreira\",\r\n    \"birthDate\":\"1996-12-20\",\r\n    \"email\": \"willian.ferreira.gomes96@gmail.com\",\r\n    \"phone\":\"11 97034-1617\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/postPacient"
+					},
+					"response": []
+				},
+				{
+					"name": "Read Pacient",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Willian Ferreira\",\r\n    \"birthDate\":\"20-12-1996\",\r\n    \"email\": \"willian.ferreira.gomes96@gmail.com\",\r\n    \"phone\":\"11 97034-1617\"\r\n}"
+						},
+						"url": "localhost:3000/getPacient/68ae0f9fb597f5907426aa2b"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prescription",
+			"item": [
+				{
+					"name": "Create Prescription",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JJZCI6IjY4YWUzMzVkN2IyMzhkODc2MzgxMzUxNSIsImlhdCI6MTc1ODQxMzM4NCwiZXhwIjoxNzU4NDE2OTg0fQ.KeP69CtHRg7NeDT280XwTVNFNBXkexSU9xM9UupYGSs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"appointmentId\" : \"68ae0fbfb597f5907426aa2d\",\r\n    \"medicine\" : \"Dipirona comprimido\",\r\n    \"dosage\" : \"1 grama\",\r\n    \"instructions\" : \"Tomar um comprimido a cada 8 horas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/createPrescription"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\":\"rauzito\",\r\n    \"password\": \"TheKey\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/login"
+			},
+			"response": []
+		}
+	]
+}

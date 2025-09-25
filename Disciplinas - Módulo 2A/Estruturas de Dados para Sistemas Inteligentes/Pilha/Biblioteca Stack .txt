@@ -1,0 +1,7 @@
+java.util.Stack;
+
+push(obj) //Empilhar
+
+pop() //Desempilhar
+
+peek() //Elemeto topo

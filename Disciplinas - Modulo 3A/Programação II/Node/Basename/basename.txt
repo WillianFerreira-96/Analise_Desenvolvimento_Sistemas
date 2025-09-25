@@ -1,0 +1,20 @@
+A principal finalidade de usar basename é extrair o nome do arquivo (ou diretório)
+a partir de um caminho, sem trazer o caminho completo.
+
+Em outras palavras: você quer só o “nome puro” do arquivo, por exemplo:
+
+Caminho: ../test/arquivoVazio.txt
+
+basename('../test/arquivoVazio.txt') → "arquivoVazio.txt"
+
+Isso é útil quando você precisa:
+
+Exibir nomes de arquivos para o usuário (UI, logs, relatórios).
+
+Renomear, mover ou copiar arquivos sem se preocupar com o caminho antigo.
+
+Filtrar ou validar arquivos por extensão ou padrão de nome.
+
+💡 Resumindo: basename é para manipulação e apresentação de nomes de arquivos, 
+não para acessar o conteúdo.
+

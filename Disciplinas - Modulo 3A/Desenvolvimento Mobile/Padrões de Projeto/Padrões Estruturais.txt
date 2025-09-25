@@ -1,0 +1,4 @@
+Para estudar:
+	- Adapter
+	- Composite
+	- Decorator

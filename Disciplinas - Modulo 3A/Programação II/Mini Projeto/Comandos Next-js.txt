@@ -1,0 +1,3 @@
+npm install next // instala o next
+npx create-next-app@latest //cria um nivo projeto
+npm run dev //roda o projeto

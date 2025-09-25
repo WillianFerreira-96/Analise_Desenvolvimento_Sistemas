@@ -1,0 +1,24 @@
+DDL - Data Definition Language [Linguagem de Definição de Dados]
+	CREATE
+	ALTER
+	DROP
+	TRUNCATE
+
+DML - Data Manipulation Language [Linguagem de Manipulação de Dados]
+	SELECT
+	INSERT
+	UPDATE
+	DELETE
+
+DCL - Data Control Language
+	GRANT
+	REVOKE
+
+TCL - Transaction Control Language
+	BEGIN
+	COMMIT
+	ROLLBACK
+	SAVE
+
+DQL - Data Query Language
+	SELECT

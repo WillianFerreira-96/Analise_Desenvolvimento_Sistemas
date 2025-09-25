@@ -1,0 +1,31 @@
+cd C:\Users\Exemplo\
+git branch backup-antes-do-rebase
+git rebase -i --root (chama todos os commits)
+git rebase -i a006089~1 (id do commit + "~1" = rebase aparti desse commit)
+	Esc, digite :wq (write and quite), e tecle Enter
+
+git rm "C:\Users\Exemplo\textoexemplo.txt" (exclui arquivos existentes)
+git commit --amend --no-edit
+
+git commit --amend -m "textoexemplo.txt"
+
+git add . (apos a exclusão)
+
+git rebase --continue  (para ir pro proximo)
+rmdir /s /q .git\rebase-merge
+
+git rebase --edit-todo (para reeditar os pick's, edit's e drop's)
+
+git remote add origin https://github.com/usuario
+git push origin main --force
+git push origin --force --tags
+
+
+git reset --hard HEAD~1~
+
+
+
+
+
+
+

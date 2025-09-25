@@ -1,0 +1,13 @@
+J-Java
+D-Data
+B-Base
+C-Connectivity
+
+Após baixar JDBD driver referente ao banco de dados em questão
+E configurar sua classe de conexão java:
+
+1º Clique na pasta do projeto no eclipse com o botão direito do mouse e vá em "Properties".
+2º Vá em "Java Build Path".
+3º Acesse "Libraries".
+4º Em seguida click em "Classpath" e "Add External JARs...".
+5º E por ultimo selecione o arquivo .jar do drive em questão.

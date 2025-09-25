@@ -1,0 +1,21 @@
+// Usamos a palavra chave "abstract" para definir uma classe quando não queremos que essa classe possa ser instânciada em um objeto.
+
+abstract class Animal{
+	//Devido a palavra chave abstract, essa classe não poderá ser instanciada 
+	String nome;
+	int idade;
+}
+
+class cachorro extends animal{
+	//Essa classe pode ser instanciada normalmente
+	public void latir(){
+		Systen.out.println("AU!");
+	}
+}
+
+class gato extends animal{
+	//Essa classe pode ser instanciada normalmente
+	public void miar(){
+		Systen.out.println("Miaaau!");
+	}
+}

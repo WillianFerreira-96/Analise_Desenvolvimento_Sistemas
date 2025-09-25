@@ -1,0 +1,4 @@
+Para estudar:
+	- Observer
+	- Strategy
+	- Command

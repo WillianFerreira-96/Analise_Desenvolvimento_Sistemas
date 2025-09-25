@@ -1,0 +1,33 @@
+git config --global user.name "seu nome"
+git config --global user.email "exemplo@seuemail.com.br"
+
+git init                                               //inicia um novo repositório vazio no projeto
+git add .                                              //adiciona todos os arquivos e pastas ao repositório
+git status                                             //mostra o status do repositório
+
+git commit -m "exemplo commit"                         //fecha o compromisso com aquela versão
+
+---------------------------------Apos alguma alteração---------------------------------------------
+
+git status
+git diff "exemplo.html"  (use o 'Q' para sair)         //mostra a diferença entre o commitado e não commitado 
+git add "exemplo.html"                                 //adiciona apenas o arquivo em questão
+git status
+git commit -m "exemplo alteração"
+
+----------------------------------------------------------------------------------------------------
+
+git log                                                //mostra os commits do projeto
+git branch                                             //mostra em qual ramo nós estamos
+git branch exemplo-Branch                              //cria uma nova branch
+git checkout exemplo-Branch                            //acessa uma branch     
+git merge exemplo-Branch                               //junta as alterações da branch com a main
+git branch - d exemplo-Branch                          //deleta a branch selecionada
+
+git remote add origin https://github.com/exemplo       //adiciona o endereço do repositório remoto
+cat .git/config                                        //mostra as variaveis dentro do .git
+git branch -m master main                              //muda o nome da branch
+git push origin main                                   //empurra todos os arquivos para o repositório remoto
+
+// caso erro: ! [rejected]
+git pull origin main --rebase                          //sincroniza com o repositório remoto

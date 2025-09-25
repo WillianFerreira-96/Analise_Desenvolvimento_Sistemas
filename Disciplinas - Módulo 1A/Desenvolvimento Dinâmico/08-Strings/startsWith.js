@@ -1,0 +1,3 @@
+//startsWith verifica se a string começa com...
+var frase = "Ola Mundo"
+console.log(frase.startsWith("Ola"))//Retorna booleano

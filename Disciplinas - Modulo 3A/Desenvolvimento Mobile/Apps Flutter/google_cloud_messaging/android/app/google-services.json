@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "621678443612",
+    "project_id": "myfirebase-82a0d",
+    "storage_bucket": "myfirebase-82a0d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621678443612:android:988462f485264e3d7dba99",
+        "android_client_info": {
+          "package_name": "com.example.google_cloud_messaging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAg9KjtW2UfMbElI-wp3rlGXHS1iIezwk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

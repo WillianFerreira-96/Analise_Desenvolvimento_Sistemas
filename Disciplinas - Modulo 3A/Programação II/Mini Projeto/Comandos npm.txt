@@ -1,0 +1,8 @@
+npm install express // Instala o Express a aplicação
+npm install mongoose // Instala o banco de dados não relacional mongoose
+npm install bcrypt // Instala o bcrypt para criptografia de senhas
+npm install jsonwebtoken // Instala o JWT para autenticação e validação
+npm install pdfkit // Instala o pdfkit para trabalhar com arquivos pdf
+npm install multer // Instala o multer para receber arquivos
+npm install cors // Instala o Cross-Origin Resource Sharing
+npm install axios // Instala a biblioteca axios usada para fazer requisições HTTP

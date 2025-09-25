@@ -1,0 +1,18 @@
+Use convenções de tipo de commit (como Conventional Commits)
+Essa prática ajuda a categorizar mudanças e automatizar changelogs, versionamento semântico, etc.
+
+Tipos comuns:
+
+feat: nova funcionalidade
+
+fix: correção de bug
+
+docs: apenas mudanças na documentação
+
+style: mudanças de formatação (semântica, espaço, ponto e vírgula etc.)
+
+refactor: mudanças no código que não adicionam funcionalidades nem corrigem bugs
+
+test: adição ou alteração de testes
+
+chore: tarefas administrativas (build, CI, dependências)

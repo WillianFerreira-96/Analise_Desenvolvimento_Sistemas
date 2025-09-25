@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)https://descomplica.pythonanywhere.com/ikigai/charts/2b09910db64340b3a610214513a39cf3 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico IKIGAI</title>
+    
+<link rel="stylesheet" href="./Gráfico IKIGAI_files/ikigai_charts.css">
+<link rel="stylesheet" href="./Gráfico IKIGAI_files/ikigai_card_profile.css">
+<script src="./Gráfico IKIGAI_files/jspdf.umd.min.js.download"></script>
+
+    
+    <link rel="stylesheet" href="./Gráfico IKIGAI_files/structure.css">
+    <script src="./Gráfico IKIGAI_files/jquery.min.js.download"></script>
+    <style type="text/css">
+        @font-face{font-family:AprovaSans;src:url(https://d3awytnmmfk53d.cloudfront.net/landings/static/fonts/aprova-sans/Aprova-Regular.woff2) format("woff2"),url(https://d3awytnmmfk53d.cloudfront.net/landings/static/fonts/aprova-sans/Aprova-Regular.woff) format("woff"),url(https://d3awytnmmfk53d.cloudfront.net/landings/static/fonts/aprova-sans/Aprova-Regular.otf) format("opentype"),url(https://d3awytnmmfk53d.cloudfront.net/landings/static/fonts/aprova-sans/Aprova-Regular.ttf) format("truetype");font-style:normal}
+        @font-face{font-family:AprovaSansBold;src:url(https://d3awytnmmfk53d.cloudfront.net/landings/static/fonts/aprova-sans/Aprova-Bold.woff2) format("woff2"),url(https://d3awytnmmfk53d.cloudfront.net/landings/static/fonts/aprova-sans/Aprova-Bold.woff) format("woff"),url(https://d3awytnmmfk53d.cloudfront.net/landings/static/fonts/aprova-sans/Aprova-Bold.otf) format("opentype"),url(https://d3awytnmmfk53d.cloudfront.net/landings/static/fonts/aprova-sans/Aprova-Bold.ttf) format("truetype");font-weight:800;font-style:normal}
+        @font-face{font-family:AprovaSansBlack;src:url(https://d3awytnmmfk53d.cloudfront.net/landings/static/fonts/aprova-sans/Aprova-Black.woff2) format("woff2"),url(https://d3awytnmmfk53d.cloudfront.net/landings/static/fonts/aprova-sans/Aprova-Black.woff) format("woff"),url(https://d3awytnmmfk53d.cloudfront.net/landings/static/fonts/aprova-sans/Aprova-Black.otf) format("opentype"),url(https://d3awytnmmfk53d.cloudfront.net/landings/static/fonts/aprova-sans/Aprova-Black.ttf) format("truetype");font-weight:900;font-style:normal}
+        @font-face{font-family:Descomplica;src:url(https://d3awytnmmfk53d.cloudfront.net/landings/static/fonts/Descomplica-Medium.otf) format("opentype");font-weight:500;font-style:normal}
+        @font-face{font-family:InterUI;src:url(https://d3awytnmmfk53d.cloudfront.net/landings/static/fonts/inter-ui/Inter-UI-Regular.woff2) format("woff2"),url(https://d3awytnmmfk53d.cloudfront.net/landings/static/fonts/inter-ui/Inter-UI-Regular.woff) format("woff");font-weight:400;font-style:normal}
+        @font-face{font-family:Pixellari;src:url(https://d3awytnmmfk53d.cloudfront.net/landings/static/fonts/Pixellari.ttf) format("truetype");font-weight:500;font-style:normal}
+        @font-face{font-family:VanguardCF;src:url(https://d3awytnmmfk53d.cloudfront.net/landings/static/fonts/vanguard/Vanguard-CF-Bold.otf) format("opentype");font-style:normal}
+    </style>
+</head><body>
+    
+<div id="navbar">
+    <div id="div-logo">
+        <a href="https://descomplica.pythonanywhere.com/"><img id="logo" src="./Gráfico IKIGAI_files/logo.svg"></a>
+    </div>
+</div>
+
+    <div class="container">
+         <input type="hidden" name="csrfmiddlewaretoken" value="gaRc5LGW6gCeW3UPOfFRBYe00msL7mosQOjdoXNRXHOsY7ZvuX9ssSURYsirdxK6">
+<div class="main-div">
+    <div class="cards">
+        <div class="info">
+            <div class="info-image">
+                <img src="./Gráfico IKIGAI_files/user.png" class="icon">
+            </div>
+            <div class="info-input">
+                <input id="name" class="input" value="Willian Ferreira" disabled="">
+            </div>
+        </div>
+        <div class="info">
+            <div class="info-image">
+                <img src="./Gráfico IKIGAI_files/arroba.png" class="icon">
+            </div>
+            <div class="info-input">
+                <input id="email" class="input" value="Willian.ferreira.gomes96@gmail.com" disabled="">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-div">
+    <div class="card centralize">
+        <div class="card-congratulation">
+            <p>
+                Parabéns! Você completou o questionário e agora está mais próximo de descobrir o seu IKIGAI, o seu propósito de vida. Em cada uma das 5 seções de resultados você vai descobrir um pouco mais sobre quais atividades estão associadas aos seus possíveis caminhos
+                no Mercado de Trabalho. Para entender melhor os resultados não esqueça de assistir os videos na nossa Plataforma ;)
+            </p>
+        </div>
+    </div>
+</div>
+<div class="main-div">
+    <div class="card centralize">
+        <div id="box-results"><!--<div class='card-background'>
+    <div class='card-profile'>
+        <p class='card-profile-text'></p>
+    </div>
+</div>-->
+
+<div class="result-cards">
+    <div class="result-title">
+        <p>Qual é a minha vocação?</p>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text">Coaching e mentoria</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Inteligência social e emocional</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Planejamento e organização</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Pensamento criativo</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Planejamento futuro</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Resolução de problemas</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Tomada de decisões</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Trabalho em equipe</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Formação e desenvolvimento</p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="result-cards">
+    <div class="result-title">
+        <p>Qual é a minha profissão ideal?</p>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text">Coaching e mentoria</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Inteligência social e emocional</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Gestão de desempenho</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Comunicação verbal</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Planejamento e organização</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Pensamento criativo</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Resolução de problemas</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Tomada de decisões</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Formação e desenvolvimento</p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="result-cards">
+    <div class="result-title">
+        <p>Qual é a base da minha missão?</p>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text">Coaching e mentoria</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text">Trabalho colaborativo</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Crescimento na carreira</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Planejamento e organização</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Pensamento criativo</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Planejamento futuro</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Trabalho em equipe</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Formação e desenvolvimento</p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="result-cards">
+    <div class="result-title">
+        <p>Qual é a minha paixão de ser?</p>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text">Coaching e mentoria</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text">Trabalho colaborativo</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Gestão de desempenho</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Crescimento na carreira</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Comunicação verbal</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Perspicácia nos negócios</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Planejamento e organização</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Pensamento criativo</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Gestão estratégica</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Formação e desenvolvimento</p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="result-cards">
+    <div class="result-title">
+        <p>Qual é a minha razão de ser?</p>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text">Coaching e mentoria</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Planejamento e organização</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Pensamento criativo</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-background">
+        <div class="card-profile">
+            <div>
+                <p class="card-profile-text"> Formação e desenvolvimento</p>
+            </div>
+        </div>
+    </div>
+    
+</div></div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            type: 'GET',
+            url: '/ikigai/query',
+            data: {
+                'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+                'key': '2b09910db64340b3a610214513a39cf3',
+                'option': $('#query-profile').val()
+            },
+            success: function(data, textStatus, jqXHR) {
+                $('#box-results').html(data)
+            },
+            dataType: 'html'
+        });
+    })
+</script>
+<script>
+    if ('1' == '1') {
+        $.ajax({
+            url: '/ikigai/mail',
+            type: 'POST',
+            data: {
+                'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+                'email': 'Willian.ferreira.gomes96@gmail.com',
+                'key': '2b09910db64340b3a610214513a39cf3'
+            },
+            success: function(data, textStatus, jqXHR) {
+                //alert(data);
+            }
+        })
+    }
+</script>
+
+    </div>
+
+        
+    
+    
+
+</body></html>

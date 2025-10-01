@@ -20,8 +20,11 @@ git remote add origin https://github.com/usuario
 git push origin main --force
 git push origin --force --tags
 
-
 git reset --hard HEAD~1~
+
+
+-----------------------------------------------------------------------
+git rm -r --cached . //Remove da indexagem do Git os arquivos ignorados
 
 
 

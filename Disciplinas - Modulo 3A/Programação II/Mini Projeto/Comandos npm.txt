@@ -6,3 +6,5 @@ npm install pdfkit // Instala o pdfkit para trabalhar com arquivos pdf
 npm install multer // Instala o multer para receber arquivos
 npm install cors // Instala o Cross-Origin Resource Sharing
 npm install axios // Instala a biblioteca axios usada para fazer requisições HTTP
+npm install recharts // para gráficos simples
+npm install chart.js react-chartjs-2 // para gráficos customizáveis
